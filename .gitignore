@@ -1,0 +1,20 @@
+# Java
+*.class
+
+# NetBeans
+**/nbproject/private/
+**/build/
+**/dist/
+**/nbbuild/
+**/nbdist/
+**/.nb-gradle/
+
+# Maven
+**/target/
+
+# Gradle
+**/.gradle/
+
+# Sistema/editor
+.DS_Store
+*~
