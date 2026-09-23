@@ -10,10 +10,11 @@ public class Ejercicio04 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        byte nota1 = 7;
-        byte nota2 = 2;
+        byte numexamen = 2;
+        float nota1 = 7;
+        float nota2 = 2;
         
-        int media = (nota1 + nota2)/2;
+        float media = (nota1 + nota2)/numexamen;
         
         System.out.println("Asignatura: Programación");
         System.out.println("Primera nota: " + nota1);
