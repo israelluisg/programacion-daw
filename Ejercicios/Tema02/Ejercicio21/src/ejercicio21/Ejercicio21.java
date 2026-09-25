@@ -19,12 +19,11 @@ public class Ejercicio21 {
         
         dias = tiempoUsuario / 86400;
         horas = (tiempoUsuario % 86400) / 3600;
-        minutos = ((tiempoUsuario % 86400) % 3600) / 60;
-        segundos = (tiempoUsuario % 3600) % 60;
+        minutos = (tiempoUsuario % 3600) / 60;
+        segundos = tiempoUsuario % 60;
         
-        System.out.println(dias);
-        System.out.println(horas);
-        System.out.println(minutos);
-        System.out.println(segundos);
+        System.out.println(tiempoUsuario + " segundos hacen un total de: " 
+                + dias + " días, " + horas + " horas, " + minutos 
+                + " minutos y " + segundos + " segundos.");
     }
 }
