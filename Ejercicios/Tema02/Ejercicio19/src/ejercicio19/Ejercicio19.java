@@ -16,7 +16,7 @@ public class Ejercicio19 {
         // Se inicializan las variables a y b, se declara la variable c.
         int a = 3, b = 6, c;
         
-        // Division entera de 3 / 6 = 0
+        // División entera de 3 / 6 = 0.
         c = a / b;
         System.out.println("El valor de c es: " + c);
         
@@ -24,11 +24,11 @@ public class Ejercicio19 {
         c = a % b;
         System.out.println("El valor de c es: " + c);
         
-        // Se le suma 1 a 'a' pasando a 4
+        // Se le suma 1 a 'a', pasando a 4.
         a++;
         System.out.println("El valor de a es: " + a);
         
-        // Se le suma 1 a 'a' pasando a 5
+        // Se le suma 1 a 'a', pasando a 5.
         ++a;
         System.out.println("El valor de a es: " + a);
         
