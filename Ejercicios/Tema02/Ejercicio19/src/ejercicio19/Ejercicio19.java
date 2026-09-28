@@ -32,8 +32,10 @@ public class Ejercicio19 {
         ++a;
         System.out.println("El valor de a es: " + a);
         
-        /* Primero se le suma 1 a 'a' pasando a 6 y 1 a 'b' 7 
-         * luego se suma a + b = 12
+        /*
+         * Primero se le suma 1 a 'a', pasando de 5 a 6, y se usa el valor 6
+         * en la suma. En 'b++' se usa primero el valor 6 y después se le suma
+         * 1 a 'b', pasando a 7. Por tanto, c = 6 + 6 = 12.
          */
         c = ++a + b++;
         System.out.println("El valor de a es: " + a);
