@@ -42,8 +42,9 @@ public class Ejercicio19 {
         System.out.println("El valor de b es: " + b);
         System.out.println("El valor de c es: " + c);
         
-        /* Primero se le suma 1 a 'a' pasando a 7 y 1 a 'b' 8 
-         * luego se suma a + b = 15
+        /*
+         * Primero se le suma 1 a 'a', pasando a 7, y 1 a 'b', pasando a 8.
+         * Después se suman ambos valores, por lo que c = 7 + 8 = 15.
          */
         c = ++a + ++b;
         System.out.println("El valor de a es: " + a);
