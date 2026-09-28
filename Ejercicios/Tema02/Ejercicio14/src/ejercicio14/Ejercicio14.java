@@ -2,7 +2,7 @@ package ejercicio14;
 
 /**
  *
- * @author alumno
+ * @author israel
  */
 public class Ejercicio14 {
 
