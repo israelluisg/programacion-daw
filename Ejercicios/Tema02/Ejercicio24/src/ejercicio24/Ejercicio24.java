@@ -1,15 +1,15 @@
 package ejercicio24;
 import java.util.Scanner;
 /**
- *
+ * 
+ * Programa que solicita las notas de las seis asignaturas y calcula la
+ * nota media del curso.
+ * 
  * @author israel
  */
 public class Ejercicio24 {
 
-    /**
-     * Programa que solicita las notas de las seis asignaturas y calcula la
-     * nota media del curso.
-     * 
+    /** 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
