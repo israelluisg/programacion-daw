@@ -1,5 +1,7 @@
 package ejercicio24;
+
 import java.util.Scanner;
+
 /**
  * 
  * Programa que solicita las notas de las seis asignaturas y calcula la

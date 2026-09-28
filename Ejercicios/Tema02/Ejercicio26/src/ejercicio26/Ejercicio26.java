@@ -1,5 +1,7 @@
 package ejercicio26;
+
 import java.util.Scanner;
+
 /**
  * 
  * Programa que separa un número de 4 cifras y muestra cada una de sus cifras
