@@ -31,7 +31,15 @@ public class RetoCreadorDePersonaje {
                 + " introduce los siguientes datos:");
         
         System.out.print("Indica tu letra inicial: ");
-        letraInicial = entrada.next().charAt(0);        
+        letraInicial = entrada.next().charAt(0);
+
+        System.out.print("Indica tu edad: ");
+        edad = entrada.nextInt();
+        
+        System.out.print("Indica tu altura: ");
+        altura = entrada.nextDouble();
+        
+        
     }
     
 }
