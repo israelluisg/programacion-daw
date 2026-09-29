@@ -31,8 +31,7 @@ public class RetoCreadorDePersonaje {
                 + " introduce los siguientes datos:");
         
         System.out.print("Indica tu letra inicial: ");
-        letraInicial = entrada.nextChar;
-        
+        letraInicial = entrada.next().charAt(0);        
     }
     
 }
