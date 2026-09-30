@@ -33,7 +33,7 @@ public class Ejercicio02 {
         
         /*
          * Se crea un condicional que realiza diferentes operaciones dependiendo
-         * de si el valor introducido se mayor o menor de 10.
+         * de si el primer valor introducido es mayor que 10 o no.
         */
         if(num1 > 10){
             resultado = num1 * num2;
