@@ -34,11 +34,14 @@ public class Ejercicio04 {
          * es el menor.
          */
         if(num1 <= num2 && num1 <= num3){
-            System.out.println("El número menor de los introducidos es el " + num1);
+            System.out.println("El número menor de los introducidos es el " 
+                    + num1);
         } else if(num2 <= num1 && num2 <= num3){
-            System.out.println("El número menor de los introducidos es el " + num2);
+            System.out.println("El número menor de los introducidos es el " 
+                    + num2);
         } else {
-            System.out.println("El número menor de los introducidos es el " + num3);
+            System.out.println("El número menor de los introducidos es el " 
+                    + num3);
         }
     }
     
