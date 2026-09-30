@@ -20,13 +20,13 @@ public class Ejercicio03 {
         // Creo el objeto Scanner para leer y almacenar los datos.
         Scanner entrada = new Scanner(System.in);
         
-        System.out.print("Por favor, introduzca el primer numero: ");
+        System.out.print("Por favor, introduzca el primer número: ");
         num1 = entrada.nextInt();
         
-        System.out.print("Ahora, introduzca un segundo numero: ");
+        System.out.print("Ahora, introduzca un segundo número: ");
         num2 = entrada.nextInt();
         
-        System.out.print("Por último, introduzca un tercer numero: ");
+        System.out.print("Por último, introduzca un tercer número: ");
         num3 = entrada.nextInt();
         
         /*

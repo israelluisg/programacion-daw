@@ -27,7 +27,7 @@ public class Ejercicio01 {
         numUsuario = entrada.nextInt();
         
         // Se crea una condición para determinar si el número es positivo o no.
-        if(numUsuario > 0){
+        if(numUsuario >= 0){
             System.out.println("El número introducido es positivo.");
         } else{
             System.out.println("El número introducido es negativo.");
