@@ -33,9 +33,9 @@ public class Ejercicio03 {
          * Se crean tres condiciones para determinar cual de los tres números
          * es el mayor.
          */
-        if(num1 > num2 && num1 > num3){
+        if(num1 >= num2 && num1 >= num3){
             System.out.println("El número mayor de los introducidos es el " + num1);
-        } else if(num2 > num1 && num2 > num3){
+        } else if(num2 >= num1 && num2 >= num3){
             System.out.println("El número mayor de los introducidos es el " + num2);
         } else {
             System.out.println("El número mayor de los introducidos es el " + num3);
