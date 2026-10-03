@@ -20,10 +20,11 @@ public class Ejercicio15 {
          * minutos y segundos.
          */
         int horas = tiempo / 3600;
-        int minutos = ((tiempo % 3600) / 60);
-        int segundos = (tiempo % 60);
+        int minutos = (tiempo % 3600) / 60;
+        int segundos = tiempo % 60;
         
-        /* Se imprime por pantalla el tiempo descompuesto en horas, minutos y
+        /* 
+         * Se imprime por pantalla el tiempo descompuesto en horas, minutos y
          * segundos.
          */
         System.out.println(tiempo + " segundos hacen un total de: " + horas 

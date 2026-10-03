@@ -39,6 +39,6 @@ public class Ejercicio23 {
 
         // Se imprime por pantalla el precio total de la compra.
         System.out.println("El precio total de su compra es de: " + precioCompra
-                + " Euros.");
+                + " euros.");
     }
 }

@@ -19,11 +19,11 @@ public class Ejercicio02 {
                 + " y " + numero2 + " es igual a " + resultado);
         
         /*
-         * Se han corregido varios errores como que la variable1 esta mal
-         * escrita ya que es numero1 no numero 1, además faltaba un + después
-         * de numero1, numero2 estaba escrita como numero 2 y estaba dentro de
-         * comillas y por tanto no estabamos mostrando la variable, por último,
-         * había un + a la derecha de resultado el cual era incorrecto.
+         * Se han corregido varios errores: numero1 estaba mal escrito como 
+         * numero 1, además, faltaba un + después de numero1. numero2 estaba 
+         * escrito como numero 2 y entre comillas, por lo que no se mostraba 
+         * el valor de la variable. Por último, había un + a la derecha de 
+         * resultado que era incorrecto.
          */
     }
     

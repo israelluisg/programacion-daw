@@ -5,11 +5,12 @@ package ejercicio14;
  * @author israel
  */
 public class Ejercicio14 {
-
+    
+    static final float PI = 3.1415926535f;
+    
     /**
      * @param args the command line arguments
      */
-    final static float PI = 3.1415926535f;
     
     public static void main(String[] args) {
         float radio = 5.2f;

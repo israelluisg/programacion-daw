@@ -22,7 +22,7 @@ public class Ejercicio16 {
         
         // Se muestra por pantalla la cantidad descompuesta en billetes.
         System.out.println(cartera + " euros hacen un total de: " 
-                + billetes50  + " billetes de 50 euros y " + billetes10 
+                + billetes50 + " billetes de 50 euros y " + billetes10 
                 + " billetes de 10 euros.");
         
     }

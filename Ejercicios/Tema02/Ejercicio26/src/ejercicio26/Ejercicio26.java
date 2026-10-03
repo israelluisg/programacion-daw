@@ -30,7 +30,6 @@ public class Ejercicio26 {
         System.out.print("Por favor, introduzca un número de 4 cifras: ");
         numUsuario = entrada.nextInt();
         
-        
         // Se realizan las operaciones para separar las cifras.
         primeraCifra = numUsuario / 1000;
         segundaCifra = (numUsuario % 1000) / 100;

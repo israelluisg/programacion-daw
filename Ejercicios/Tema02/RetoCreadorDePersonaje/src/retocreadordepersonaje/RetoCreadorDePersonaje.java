@@ -33,7 +33,7 @@ public class RetoCreadorDePersonaje {
         // Creación de Scanner
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Comencemos con la creación de personaje,"
+        System.out.println("Comencemos con la creación del personaje."
                 + " introduce los siguientes datos:");
 
         // FASE 1: LECTURA DE DATOS

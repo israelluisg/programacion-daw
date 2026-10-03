@@ -2,6 +2,8 @@ package ejercicio03;
 
 /**
  *
+ * Programa que imprime por pantalla el nombre, edad y altura.
+ * 
  * @author israel
  */
 public class Ejercicio03 {
@@ -15,7 +17,7 @@ public class Ejercicio03 {
         
         System.out.println("Israel Luis Gómez.");
         System.out.println("Mi edad es: " + edad + " años.");
-        System.out.println("Mi altura es " + altura + "cm.");
+        System.out.println("Mi altura es " + altura + " metros.");
     }
     
 }

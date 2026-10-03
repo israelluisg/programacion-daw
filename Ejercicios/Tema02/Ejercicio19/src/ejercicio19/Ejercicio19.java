@@ -20,7 +20,7 @@ public class Ejercicio19 {
         c = a / b;
         System.out.println("El valor de c es: " + c);
         
-        // Módulo de dividir 3 entre 6 = 3
+        // Resto de dividir 3 entre 6 = 3
         c = a % b;
         System.out.println("El valor de c es: " + c);
         
