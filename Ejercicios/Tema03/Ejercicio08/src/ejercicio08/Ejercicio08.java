@@ -47,9 +47,10 @@ public class Ejercicio08 {
         
         moneda1 = resto % 2;
         
-        System.out.println(dinero + " Euros se descomponen en:");
         // Creo condiciones para que solo se muestren los billetes y monedas
         // distintos de cero.
+        System.out.println(dinero + " Euros se descomponen en:");
+        
         if (billete50 != 0){
             System.out.println("Billetes de 50: " + billete50);
         }

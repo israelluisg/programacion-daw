@@ -3,7 +3,10 @@ package ejercicio09;
 import java.util.Scanner;
 
 /**
- *
+ * 
+ * Programa que ordena un número introducido por el usuario de menor a mayor
+ * y lo muestra por pantalla.
+ * 
  * @author israel
  */
 public class Ejercicio09 {
