@@ -18,7 +18,7 @@ public class Ejercicio16 {
         
         System.out.print("Los números impares existentes entre el número 20" 
                 + " y el 160 son: ");
-        for (int i = 20; i <= 160; i++) {
+        for (int i = 20; i < 160; i++) {
             if ((i % 2) != 0) {
                 System.out.print(i + " - ");
                 numImpresos++;

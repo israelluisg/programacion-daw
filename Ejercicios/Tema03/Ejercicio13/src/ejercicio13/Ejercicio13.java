@@ -17,8 +17,8 @@ public class Ejercicio13 {
         int num = 11;
         
         // Creo un bucle while que solo muestra por pantalla números pares
-        while(num < 133){
-            if((num % 2) == 0){
+        while (num < 133) {
+            if ((num % 2) == 0) {
                 System.out.println(num);    
             }
             num++;
