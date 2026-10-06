@@ -14,7 +14,7 @@ public class Ejercicio10 {
      */
     public static void main(String[] args) {
         
-        // Bucel for que muestra "Hola" cinco veces por pantalla
+        // Bucle for que muestra "Hola" cinco veces por pantalla
         for (int i = 0; i < 5; i++){
             System.out.println("Hola");
         }

@@ -14,9 +14,10 @@ public class Ejercicio11 {
      */
     public static void main(String[] args) {
         
-        // Bucle que muestra por pantalla Hola repetido de un numero del 1 al 6
-        for(int i = 1; i <= 6; i++){
-            System.out.print("- Hola" + i + " -");
+        // Bucle que muestra por pantalla Hola repetido de un número del 1 al 6
+        System.out.print("- ");
+        for (int i = 1; i <= 6; i++) {
+            System.out.print("Hola" + i + " - ");
         }
     }
 }
