@@ -1,8 +1,13 @@
+
 package ejercicio23;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.InputMismatchException;
+
 /**
+ *
+ * Programa que pide al usuario introducir un número, posteriormente se
+ * muestra por pantalla los números entre 1 y el número del usuario.
  *
  * @author israel
  */
@@ -12,30 +17,34 @@ public class Ejercicio23 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int numUsuario;
-        boolean verificacion = false;
-        
+        // Declaro la variable numUsuario
+        int numUsuario = 0;
+
+        // Creo el objeto Scanner para registrar la entrada
         Scanner entrada = new Scanner(System.in);
-        
-        System.out.println("Introduzca un número");
+
+        // Creo un bucle do-while para asegurar que el usuario introduce un
+        // número mayor que 1, si no se le muestra un error por pantalla
         do {
-            try{
+            System.out.print("Introduzca un número: ");
+
+            try {
                 numUsuario = entrada.nextInt();
 
-                if (numUsuario < 1) {
-                    System.out.println("Introduce un número mayor a 1.");
-                } else {
-                    verificacion = true;
+                if (numUsuario <= 1) {
+                    System.out.println("Error, introduzca un número mayor que 1.");
                 }
 
-                for (int i = 1; i < numUsuario; i++){
-                    System.out.println(i);
-                }
             } catch (InputMismatchException e) {
-                System.out.println("Añada un dato válido.");
+                System.out.println("Error, introduzca un número entero.");
+                entrada.next();
             }
-            
-        } while (verificacion = false);
-        
+
+        } while (numUsuario <= 1);
+
+        // Muestro por pantalla los números entre 1 y numUsuario
+        for (int i = 2; i < numUsuario; i++) {
+            System.out.println(i);
+        }
     }
 }
