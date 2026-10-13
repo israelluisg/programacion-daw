@@ -2,7 +2,7 @@ package ejercicio28;
 
 /**
  *
- * Programa que genera un número aleatorio entre el y el 100 y muestra por
+ * Programa que genera un número aleatorio entre el 1 y el 100 y muestra por
  * pantalla si es par o impar.
  * 
  * @author israel
