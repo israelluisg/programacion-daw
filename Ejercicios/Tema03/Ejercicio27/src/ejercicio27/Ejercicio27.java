@@ -1,4 +1,3 @@
-
 package ejercicio27;
 
 import java.util.InputMismatchException;
