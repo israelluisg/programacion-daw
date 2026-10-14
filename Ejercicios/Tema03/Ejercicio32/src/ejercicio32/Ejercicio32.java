@@ -48,24 +48,24 @@ public class Ejercicio32 {
 
         // Corrección de días negativos
         if (dias < 0) {
-
+            
             switch (mesActual - 1) {
-
+                
                 // Meses de 31 días
                 case 0, 1, 3, 5, 7, 8, 10 -> {
                     dias += 31;
                     meses--;
                 }
-
+                
                 // Meses de 30 días
                 case 4, 6, 9, 11 -> {
                     dias += 30;
                     meses--;
                 }
-
+                
                 // Febrero: 28 o 29 días
                 case 2 -> {
-
+                    
                     // Comprobación de año bisiesto
                     if ((anioActual % 4) == 0 && (anioActual % 100) != 0) {
                         dias += 29;

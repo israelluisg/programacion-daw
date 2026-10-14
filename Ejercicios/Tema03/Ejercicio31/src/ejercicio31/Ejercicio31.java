@@ -21,7 +21,7 @@ public class Ejercicio31 {
             aleatorio = (int) (Math.random() * 100 + 1);
 
             // Compruebo si el número generado es impar
-            if (aleatorio % 2 != 0) {
+            if ((aleatorio % 2) != 0) {
                 if (impar1 == 0) {
                     impar1 = aleatorio;
                 } else if (impar2 == 0) {
