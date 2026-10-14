@@ -1,11 +1,11 @@
 package ejercicio32;
 
 import java.util.Scanner;
+
 /**
- *
- * Programa que calcula la edad de una persona dependiendo de su fecha de 
+ * Programa que calcula la edad de una persona dependiendo de su fecha de
  * nacimiento y la fecha actual.
- * 
+ *
  * @author israel
  */
 public class Ejercicio32 {
@@ -14,16 +14,17 @@ public class Ejercicio32 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         // Declaro las variables
-        int añoActual, mesActual, diaActual;
-        int añoNacimiento, mesNacimiento, diaNacimiento;
-        
+        int anioActual, mesActual, diaActual;
+        int anioNacimiento, mesNacimiento, diaNacimiento;
+
         // Creo el objeto Scanner
         Scanner entrada = new Scanner(System.in);
-        
-        // Pido los datos al usuario
+
+        // Solicito los datos al usuario
         System.out.print("Introduzca el año actual: ");
-        añoActual = entrada.nextInt();
+        anioActual = entrada.nextInt();
 
         System.out.print("Introduzca el mes actual: ");
         mesActual = entrada.nextInt();
@@ -32,57 +33,62 @@ public class Ejercicio32 {
         diaActual = entrada.nextInt();
 
         System.out.print("Ahora, introduzca su año de nacimiento: ");
-        añoNacimiento = entrada.nextInt();
+        anioNacimiento = entrada.nextInt();
 
         System.out.print("Introduzca su mes de nacimiento: ");
         mesNacimiento = entrada.nextInt();
 
         System.out.print("Por último, introduzca su día de nacimiento: ");
         diaNacimiento = entrada.nextInt();
-        
-        // Inicializo las variables con las operaciones
-        int años = añoActual - añoNacimiento;
+
+        // Cálculo inicial de la edad
+        int anios = anioActual - anioNacimiento;
         int meses = mesActual - mesNacimiento;
         int dias = diaActual - diaNacimiento;
-        
-        // Condición para determinar meses negativos
-        if (meses < 0) {
-            meses += 12;
-            años--;
-        }
-        
-        // Condición para determinar días negativos
+
+        // Corrección de días negativos
         if (dias < 0) {
-            switch (dias) {
-                case -1:
-                case -3:
-                case -5:
-                case -7:
-                case -8:
-                case -10: {
+
+            switch (mesActual - 1) {
+
+                // Meses de 31 días
+                case 0, 1, 3, 5, 7, 8, 10 -> {
                     dias += 31;
                     meses--;
-                    break;
                 }
-                case -4:
-                case -6:
-                case -9:
-                case -11: {
+
+                // Meses de 30 días
+                case 4, 6, 9, 11 -> {
                     dias += 30;
                     meses--;
-                    break;
                 }
-                case -2: {
-                    dias += 28;
+
+                // Febrero: 28 o 29 días
+                case 2 -> {
+
+                    // Comprobación de año bisiesto
+                    if ((anioActual % 4) == 0 && (anioActual % 100) != 0) {
+                        dias += 29;
+                    } else if ((anioActual % 400) == 0) {
+                        dias += 29;
+                    } else {
+                        dias += 28;
+                    }
+
                     meses--;
-                    break;
                 }
             }
         }
-        
-        // Se muestra por pantalla la edad
-        System.out.println("Su edad exacta es de " + años 
-                + " años, " + meses + " meses y " 
+
+        // Corrección de meses negativos
+        if (meses < 0) {
+            meses += 12;
+            anios--;
+        }
+
+        // Mostrar la edad calculada
+        System.out.println("Su edad exacta es de " + anios
+                + " años, " + meses + " meses y "
                 + dias + " días.");
     }
 }
