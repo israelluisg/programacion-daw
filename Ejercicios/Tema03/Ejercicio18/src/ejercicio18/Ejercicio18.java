@@ -1,5 +1,6 @@
 package ejercicio18;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  *
@@ -28,10 +29,21 @@ public class Ejercicio18 {
          * número almacenado en la variable contraseña se le felicitará,
          * por el contrario si falla 3 veces se mostrará por pantalla un error.
          */
+            
+        
         do {
-            System.out.print("Introduzca la contraseña: ");
-            entradaUsuario = entrada.nextInt();
+            try {
+                System.out.print("Introduzca la contraseña: ");
+                entradaUsuario = entrada.nextInt();
+
+            } catch (InputMismatchException e) {
+                System.out.println("Error, introduzca números enteros.");
+                entrada.nextLine();
+                entradaUsuario = 0;
+            }
+            
             intentos++;
+            
         } while (intentos < 3 && entradaUsuario != contraseña);
         
         if (entradaUsuario == contraseña) {
