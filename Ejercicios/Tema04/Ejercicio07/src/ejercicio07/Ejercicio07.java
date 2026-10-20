@@ -4,6 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  *
+ * Programa que ordena los números introducidos por el usuario de menor a mayor.
+ * 
  * @author israel
  */
 public class Ejercicio07 {
@@ -25,7 +27,8 @@ public class Ejercicio07 {
      * @param num4 cuarto número.
      * @param aux variable auxiliar para intercambiar variables.
      */
-    public static void ordenarMayor (int num1, int num2, int num3, int num4, int aux) {
+    public static void ordenarMayor (int num1, int num2, int num3, int num4) {
+        int aux;
         do {
             if (num1 > num2) {
                 aux = num1;
@@ -53,9 +56,6 @@ public class Ejercicio07 {
         // Declaro las variables num1, num2, num3 y num4
         int num1, num2, num3, num4;
         
-        // Incializo la variable aux
-        int aux = 0;
-        
         // Pido al usuario introducir los datos llamando al método pedirNumero
         try {
             System.out.print("Introduzca el primer número: ");
@@ -71,7 +71,7 @@ public class Ejercicio07 {
             num4 = pedirNumero();
 
             // Llamo al método ordenarMayor para determinar el orden de menor a mayor
-            ordenarMayor(num1, num2, num3, num4, aux);
+            ordenarMayor(num1, num2, num3, num4);
             
         } catch (InputMismatchException e) {
             System.out.println("Error, introduzca un número entero.");

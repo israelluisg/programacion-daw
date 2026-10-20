@@ -11,6 +11,7 @@ public class Operaciones {
      * @param numUsuario numero entero a determinar su paridad.
      */
     public static void paridad (int numUsuario) {
+        // Mediante condiciones determino si numUsuario es par o impar
         if ((numUsuario % 2) == 0) {
             System.out.println("El número " + numUsuario + " es par.");
         } else {
