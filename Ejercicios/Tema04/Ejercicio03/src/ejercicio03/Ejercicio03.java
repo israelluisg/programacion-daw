@@ -1,5 +1,6 @@
 package ejercicio03;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import operaciones.NumeroMayor;
 /**
@@ -22,17 +23,22 @@ public class Ejercicio03 {
         Scanner entrada = new Scanner(System.in);
         
         // Pido introducir los datos al usuario
-        System.out.print("Por favor, introduzca el primer numero: ");
-        num1 = entrada.nextInt();
-        
-        System.out.print("Ahora, introduzca un segundo numero: ");
-        num2 = entrada.nextInt();
-        
-        System.out.print("Por último, introduzca un tercer numero: ");
-        num3 = entrada.nextInt();
-        
-        // Llamo al método numeroMayor para que determine el número mayor
-        NumeroMayor.numeroMayor(num1, num2, num3);
+        try {
+            System.out.print("Por favor, introduzca el primer número: ");
+            num1 = entrada.nextInt();
+
+            System.out.print("Ahora, introduzca un segundo número: ");
+            num2 = entrada.nextInt();
+
+            System.out.print("Por último, introduzca un tercer número: ");
+            num3 = entrada.nextInt();
+            
+            // Llamo al método numeroMayor para que determine el número mayor
+            NumeroMayor.numeroMayor(num1, num2, num3);
+
+        } catch (InputMismatchException e) {
+            System.out.println("Error, introduzca un número entero.");
+        }
         
     }
 }

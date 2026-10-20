@@ -1,5 +1,6 @@
 package ejercicio02;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  *
@@ -18,23 +19,26 @@ public class Ejercicio02 {
         // Declaro las variables num1 y num2
         int num1, num2;
         
-        // Creo el objeto Scanner para regitrar la entrada
+        // Creo el objeto Scanner para registrar la entrada
         Scanner entrada = new Scanner(System.in);
         
         // Pido los datos al usuario
-        System.out.print("Introduzca el primer número: ");
-        num1 = entrada.nextInt();
-        
-        System.out.print("Introduzca el segundo número: ");
-        num2 = entrada.nextInt();
-        
-        // Creo la condición para determinar si multiplicar o sumar
-        if (num1 > 10) {
-            System.out.println("La operación que se realizó es suma y el resultado es: " 
-                    + operaciones.multiplicar(num1, num2));
-        } else {
-            System.out.println("La operación que se realizó es suma y el resultado es: " 
-                    + operaciones.sumar(num1, num2));
+        try {
+            System.out.print("Introduzca el primer número: ");
+            num1 = entrada.nextInt();
+
+            System.out.print("Introduzca el segundo número: ");
+            num2 = entrada.nextInt();
+
+            // Creo la condición para determinar si multiplicar o sumar
+            if (num1 > 10) {
+                Operaciones.multiplicar(num1, num2);
+            } else {
+                Operaciones.sumar(num1, num2);
+            }
+            
+        } catch (InputMismatchException e) {
+            System.out.println("Error, introduzca un número entero.");
         }
     }
 }

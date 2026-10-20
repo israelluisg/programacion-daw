@@ -4,23 +4,26 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  *
- * @author alumno
+ * Programa que pide un número al usuario y posteriormente muestra por pantalla
+ * si ese número es positivo, negativo o cero.
+ * 
+ * @author israel
  */
 public class Ejercicio01 {
     
     /**
      * Método que verifica si el número introducido por el usuario es positivo, 
      * negativo o igual a cero y lo muestra por pantalla.
-     * @param numUsuario 
+     * @param numUsuario número introducido por el usuario.
      */
     public static void signo (int numUsuario) {
         
         if (numUsuario < 0) {
-            System.out.println("El número introducido es impar.");
+            System.out.println("El número introducido es negativo.");
         } else if (numUsuario > 0) {
-            System.out.println("El número introducido es par");
-        } else if (numUsuario == 0) {
-            System.out.println("El número introducido es neutro.");
+            System.out.println("El número introducido es positivo.");
+        } else {
+            System.out.println("El número introducido es cero.");
         }
     }
     
@@ -28,7 +31,7 @@ public class Ejercicio01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Declaro la varuable numUsuario
+        // Declaro la variable numUsuario
         int numUsuario;
         
         // Creo el objeto Scanner para registrar la entrada
