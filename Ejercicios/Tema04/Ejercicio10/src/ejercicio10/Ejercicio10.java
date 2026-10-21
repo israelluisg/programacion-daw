@@ -8,11 +8,17 @@ import java.util.Scanner;
  */
 public class Ejercicio10 {
     
-    public static int pedirNumero () {
-        Scanner entrada = new Scanner(System.in);
-        
-        System.out.print("Introduzca un numero para calcular su tabla de multiplicar: ");
-        return entrada.nextInt();
+    public static int pedirNumero (Scanner entrada) {
+        do {
+            try {
+                System.out.print("Introduzca un numero para calcular su tabla de multiplicar: ");
+                return entrada.nextInt();
+                
+            } catch(InputMismatchException e) {
+                System.out.println("Error, introduzca un número entero.");
+                entrada.nextLine();
+            }
+        } while (true);
     }
     
     public static void hacerTabla (int numUsuario) {
@@ -25,15 +31,8 @@ public class Ejercicio10 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        boolean validar = true;
-        do {
-            try {
-                hacerTabla(pedirNumero());
-                
-                validar = false;
-            } catch(InputMismatchException e) {
-                System.out.println("Error, introduzca un número entero.");
-            }
-        } while (validar);
+        Scanner entrada = new Scanner(System.in);
+        
+        hacerTabla(pedirNumero(entrada));
     }
 }
