@@ -14,7 +14,6 @@ public class Ejercicio14 {
     
     /**
      * Método que pide al usuario introducir un número.
-     * @param entrada objeto Scanner que registra la entrada.
      * @return devuelve el número del usuario.
      */
     public static int pedirNumero () {
