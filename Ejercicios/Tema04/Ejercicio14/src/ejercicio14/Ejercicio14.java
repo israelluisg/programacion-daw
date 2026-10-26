@@ -17,7 +17,8 @@ public class Ejercicio14 {
      * @param entrada objeto Scanner que registra la entrada.
      * @return devuelve el número del usuario.
      */
-    public static int pedirNumero (Scanner entrada) {
+    public static int pedirNumero () {
+        Scanner entrada = new Scanner(System.in);
         System.out.print("Introduzca un número: ");
         return entrada.nextInt();
     }
@@ -60,7 +61,7 @@ public class Ejercicio14 {
         
         do {
             try {
-                numUsuario = pedirNumero(entrada);
+                numUsuario = pedirNumero();
                 validar = comprobarNumero(numUsuario);
                 mostrarNumeros(validar, numUsuario);
             } catch (InputMismatchException e) {

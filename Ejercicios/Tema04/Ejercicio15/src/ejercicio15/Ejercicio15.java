@@ -12,22 +12,22 @@ public class Ejercicio15 {
     
     /**
      * Método que pide al usuario introducir un número.
-     * @param entrada Scanner que registra la entrada.
      * @return se devuelve el número introducido por el usuario.
      */
-    public static int pedirNumero (Scanner entrada) {
+    public static int pedirNumero () {
+        Scanner entrada = new Scanner(System.in);
         System.out.print("Introduzca un número: ");
         return entrada.nextInt();
     }
     
     /**
      * Método que crea una interfaz con diferentes opciones mediante un switch.
-     * @param entrada Scanner que registra la opción del usuario.
      * @param num1 Primer número introducido por el usuario.
      * @param num2 Segundo número introducido por el usuario.
      */
-    public static void mostrarInterfaz (Scanner entrada, int num1, int num2) {
+    public static void mostrarInterfaz (int num1, int num2) {
         int numOpcion;
+        Scanner entrada = new Scanner(System.in);
         do {
             System.out.println("\nSeleccione una opción: ");
             System.out.println("\n1.- Sumar los números.");
@@ -95,11 +95,10 @@ public class Ejercicio15 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        int num1 = pedirNumero(entrada);
-        int num2 = pedirNumero(entrada);
+        int num1 = pedirNumero();
+        int num2 = pedirNumero();
         
-        mostrarInterfaz(entrada, num1, num2);
+        mostrarInterfaz(num1, num2);
     }
 
 }

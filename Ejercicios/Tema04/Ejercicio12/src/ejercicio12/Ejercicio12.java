@@ -1,4 +1,3 @@
-
 package ejercicio12;
 
 import java.util.InputMismatchException;
@@ -13,14 +12,15 @@ import java.util.Scanner;
 public class Ejercicio12 {
 
     // Inicializo la constante CONTRASENIA
-    final static int CONTRASENIA = 1234;
+    public static final int CONTRASENIA = 1234;
 
     /**
      * Método que pide una contraseña al usuario.
      * @param entrada Scanner que registra la entrada del usuario.
      * @return devuelve la contraseña introducida o 0 si la entrada no es válida.
      */
-    public static int pedirContrasenia (Scanner entrada) {
+    public static int pedirContrasenia () {
+        Scanner entrada = new Scanner(System.in);
         try {
             System.out.print("Introduzca la contraseña: ");
             return entrada.nextInt();
@@ -59,8 +59,7 @@ public class Ejercicio12 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Declaro las variables necesarias e inicializo el Scanner y el contador
-        Scanner entrada = new Scanner(System.in);
+        // Declaro las variables necesarias e inicializo el contador
         int numUsuario;
         boolean validar;
         int intentos = 0;
@@ -68,7 +67,7 @@ public class Ejercicio12 {
         // Repito la petición hasta acertar la contraseña o alcanzar 3 intentos
         do {
             intentos++;
-            numUsuario = pedirContrasenia(entrada);
+            numUsuario = pedirContrasenia();
             validar = comprobarContrasenia(numUsuario);
         } while (!validar && intentos < 3);
 
