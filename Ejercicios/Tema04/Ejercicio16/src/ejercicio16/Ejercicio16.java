@@ -37,7 +37,7 @@ public class Ejercicio16 {
     }
     
     public static double hacerSeno () {
-        return Math.sin(45);
+        return Math.sin(Math.toRadians(45));
     }
     
     /**

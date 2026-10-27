@@ -24,7 +24,7 @@ public class Ejercicio17 {
      * @return devuelve la letra aleatoria.
      */
     public static int determinarLetra () {
-        return  (int) (Math.random ()*10) + 97;
+        return  (int) (Math.random () * 26) + 97;
     }
     
     /**
