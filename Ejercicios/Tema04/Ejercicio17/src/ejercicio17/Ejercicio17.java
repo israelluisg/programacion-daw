@@ -3,7 +3,7 @@ package ejercicio17;
 import java.util.Scanner;
 /**
  *
- * Programa que juega con el usuario a adivinar una letra, indicandole que tan
+ * Programa que juega con el usuario a adivinar una letra, indicándole qué tan
  * cerca está.
  * 
  * @author israel
@@ -14,7 +14,7 @@ public class Ejercicio17 {
      * Método que pide la letra al usuario.
      * @return el número de la letra.
      */
-    public static int pedirNumero () {
+    public static int pedirLetra () {
         Scanner entrada = new Scanner (System.in);
         return entrada.nextLine().charAt(0);
     }
@@ -28,8 +28,8 @@ public class Ejercicio17 {
     }
     
     /**
-     * Método que determina que tan cerca está el usuario de acertar la letra
-     * correcta.
+     * Método que determina si la letra introducida por el usuario está antes o
+     * después de la letra aleatoria.
      * @param letraUsuario Dato introducido por el usuario.
      * @param letraSistema Dato introducido por el programa de forma aleatoria.
      */
@@ -55,7 +55,7 @@ public class Ejercicio17 {
         do {
             System.out.print("Introduzca la letra: ");
             intentos++;
-            letraUsuario = pedirNumero();
+            letraUsuario = pedirLetra();
             determinarResultado(letraUsuario, letraSistema);
         } while (letraUsuario != letraSistema);
         
