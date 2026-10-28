@@ -3,7 +3,7 @@ package ejercicio19;
 import java.util.Scanner;
 /**
  *
- * Programa que pide un día de la semana al usuario y determina cual es su posición.
+ * Programa que pide un día de la semana al usuario y determina cuál es su posición.
  * 
  * @author israel
  */
@@ -31,7 +31,7 @@ public class Ejercicio19 {
             case "jueves" -> System.out.println ("El jueves es el cuarto día de la semana.");
             case "viernes" -> System.out.println ("El viernes es el quinto día de la semana.");
             case "sábado" -> System.out.println ("El sábado es el sexto día de la semana.");
-            case "domingo" -> System.out.println ("El domingo es el septimpo día de la semana.");
+            case "domingo" -> System.out.println ("El domingo es el séptimo día de la semana.");
             default -> System.out.println ("Introduzca un día de la semana válido.");
         }
     }
