@@ -40,7 +40,7 @@ public class Ejercicio14 {
     public static void mostrarNumeros (boolean validar, int numUsuario) {
         int numMostrados = 0;
         if (validar) {
-            for (int i = 1; i * 3 < numUsuario; i++) {
+            for (int i = 1; i * 3 <= numUsuario; i++) {
                 System.out.println(i * 3);
                 numMostrados++;
             }

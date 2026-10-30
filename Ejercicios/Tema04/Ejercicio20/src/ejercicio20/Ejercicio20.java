@@ -65,7 +65,7 @@ public class Ejercicio20 {
      * @return Devuelve si es correcta o no.
      */
     public static boolean verificarRespuesta (String respuesta, String respuestaUsuario) {
-        return respuesta.equals(respuestaUsuario);
+        return respuesta.equalsIgnoreCase(respuestaUsuario);
     }
     
     /**

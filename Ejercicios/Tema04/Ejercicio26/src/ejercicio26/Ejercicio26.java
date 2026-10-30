@@ -15,9 +15,12 @@ public class Ejercicio26 {
         return entrada.nextInt();
     }
     
-    public static boolean esPrimo (int numUsuario) {        
+    public static boolean esPrimo (int numUsuario) {   
+        if (numUsuario <= 1) {
+            return false;
+        }
         for (int i = 2; i < numUsuario; i++) {
-            if ((numUsuario % 1) == 0 && (numUsuario % i) == 0) {
+            if ((numUsuario % i) == 0) {
                 return false;
             }
         }
