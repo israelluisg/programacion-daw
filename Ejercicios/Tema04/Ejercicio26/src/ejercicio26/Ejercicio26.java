@@ -1,5 +1,6 @@
 package ejercicio26;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -13,13 +14,26 @@ public class Ejercicio26 {
     
     /**
      * Método que pide al usuario introducir un número.
-     * @return devuelve el número introducido por el usuario.
+     * @return Devuelve el número introducido por el usuario.
      */
     public static int pedirNumero () {
         Scanner entrada = new Scanner (System.in);
+        // Inicializo la variable validar para controlar que el usuario introduzca un entero.
+        boolean validar = true;
+        int numUsuario = 0;
         
-        System.out.print("Introduzca un número: ");
-        return entrada.nextInt();
+        do {
+            try {
+                System.out.print("Introduzca un número: ");
+                numUsuario = entrada.nextInt();
+                validar = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Error, introduzca un entero.");
+                entrada.nextLine();
+            }
+        } while (validar);
+        
+        return numUsuario;
     }
     
     /**
@@ -41,12 +55,12 @@ public class Ejercicio26 {
     }
     
     /**
-     * Método que interpreta si el número introducido por el usuario era primo
+     * Método que interpreta si el número introducido por el usuario es primo
      * o no y muestra por pantalla el resultado.
-     * @param validar Booleano que se determina en el método esPrimo.
+     * @param esPrimo Booleano que indica si el número introducido es primo o no.
      */
-    public static void interpretarResultado (boolean validar) {
-        if (validar) {
+    public static void interpretarResultado (boolean esPrimo) {
+        if (esPrimo) {
             System.out.println("El número introducido es primo.");
         } else {
             System.out.println("El número introducido no es primo.");
