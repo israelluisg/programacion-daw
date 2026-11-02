@@ -6,6 +6,9 @@ import static ejercicio23.Constantes.VELOCIDADLUZ;
 
 /**
  *
+ * Programa que muestra por pantalla los valores de las tres
+ * constantes definidas en la clase Constantes.
+ * 
  * @author israel
  */
 public class PruebaConstantes {

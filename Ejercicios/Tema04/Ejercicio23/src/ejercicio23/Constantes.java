@@ -1,7 +1,9 @@
 package ejercicio23;
 
 /**
- *
+ * Clase que contiene tres constantes relacionadas con la física:
+ * la velocidad de la luz, la constante de gravitación universal
+ * y la constante de Planck.
  * @author israel
  */
 public class Constantes {
