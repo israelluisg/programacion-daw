@@ -43,15 +43,19 @@ public class Ejercicio26 {
      * @return Devuelve un booleano determinando si es primo o no.
      */
     public static boolean esPrimo (int numUsuario) {   
+        int i = 2;
+        boolean esPrimo = true;
         if (numUsuario <= 1) {
-            return false;
+            return !esPrimo;
         }
-        for (int i = 2; i < numUsuario; i++) {
+        
+        while (i < numUsuario && esPrimo) {
             if ((numUsuario % i) == 0) {
-                return false;
+                esPrimo = false;
             }
+            i++;
         }
-        return true;
+        return esPrimo;
     }
     
     /**
