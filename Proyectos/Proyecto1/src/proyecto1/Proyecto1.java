@@ -39,6 +39,10 @@ public class Proyecto1 {
         return numUsuario;
     }
     
+    /**
+     * Método que genera un entero aleatorio entre 1 y 100.
+     * @return Devuelve el número entero aleatorio.
+     */
     public static int aleatorizar () {
         return (int) (Math.random() * 100) + 1;
     }
