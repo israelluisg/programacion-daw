@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ejercicio02;
 
 /**
  *
- * @author alumno
+ * @author israel
  */
 public class Curso {
+    private String nombre;
+    private int numeroHoras;
     
+    private static int numeroDeCursos;
+    
+    // Set de nombre y numeroHoras
+    public void establecerNombreyHoras (String nom, int num) {
+        nombre = nom;
+        numeroHoras = num;
+    }
 }
