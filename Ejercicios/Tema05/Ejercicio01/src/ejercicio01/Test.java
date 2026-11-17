@@ -15,8 +15,8 @@ public class Test {
     public static void main(String[] args) {
         
         // Creo los objetos miCoche y cochePadre de la clase Coche
-        Coche miCoche = new Coche ();
-        Coche cochePadre = new Coche ();
+        Coche miCoche = new Coche();
+        Coche cochePadre = new Coche();
         
         // Establezco las características de miCoche
         miCoche.establecerModelo("Corolla");

@@ -14,6 +14,44 @@ public class Bicicleta {
     // Atributo static (se inicializa)
     private static int contadorBiciletas = 0;
     
+    // Atributo de otra clase (composición de clases)
+    private Ciclista ciclista;
+    
+    // Constructores
+    // 1. Por defecto
+    public Bicicleta () {
+        marca = "";
+        color = "";
+        precio = 0.0f;
+        anios = 0;
+        
+        ciclista = new Ciclista();
+        
+        aumentarContadorBicicleta();
+    }
+    
+    // 2. Parametrizado
+    public Bicicleta (String marca, String color, float precio, int anios, Ciclista ciclista) {
+        this.marca = marca;
+        this.color = color;
+        this.precio = precio;
+        this.anios = anios;
+        
+        this.ciclista = ciclista;
+        
+        aumentarContadorBicicleta();
+    }
+    
+    // 3. Otro ejemplo
+    public Bicicleta (String color) {
+        marca = "";
+        this.color = color;
+        precio = 0.0f;
+        anios = 0;
+        
+        aumentarContadorBicicleta();
+    }
+    
     // Métodos
     // Getters / Setters
     public String getMarca () {
@@ -52,6 +90,14 @@ public class Bicicleta {
         return contadorBiciletas;
     }
     
+    public Ciclista getCicilista () {
+        return ciclista;
+    }
+    
+    public void setCiclista (Ciclista ciclista) {
+        this.ciclista = ciclista;
+    }
+    
     // Otros métodos
     public void mostrarAntiguedad () {
         if (anios > 10) {
@@ -71,6 +117,7 @@ public class Bicicleta {
         System.out.println("Color: " + color);
         System.out.println("Precio: " + precio);
         System.out.println("Años: " + anios);
+        System.out.println("Ciclista: " + ciclista);
     }
     
     @Override
@@ -78,6 +125,7 @@ public class Bicicleta {
        return "Marca: " + marca 
                + ", Color: " + color 
                + ", Precio: " + precio 
-               + ", Años: " + anios;
+               + ", Años: " + anios
+               + ", Ciclista: " + ciclista;
     }
 }

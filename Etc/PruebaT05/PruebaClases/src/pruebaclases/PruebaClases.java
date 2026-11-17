@@ -18,8 +18,6 @@ public class PruebaClases {
         bici1.setPrecio(100f);
         bici1.setAnios(5);
         
-        // Incrementar contador de bicicleta
-        Bicicleta.aumentarContadorBicicleta();
         
         // Crear bici2
         Bicicleta bici2 = new Bicicleta();
@@ -28,8 +26,7 @@ public class PruebaClases {
         bici2.setPrecio(500f);
         bici2.setAnios(15);
         
-        // Incrementar contador de bicicleta
-        Bicicleta.aumentarContadorBicicleta();
+
         // Mostrar bici1
         bici1.mostrarBicicleta();
         
@@ -42,5 +39,22 @@ public class PruebaClases {
         // Mostrar contador de bicicletas
         System.out.println("Contador de bicicletas: " 
                 + Bicicleta.getContadorBicicletas());
+        
+        // Creamos una bici con el constructor parametrizado
+        // Bicicleta bici3 = new Bicicleta("Canyon", "Negro", 2000, 3);
+        System.out.println("Contador de bicicletas: " 
+                + Bicicleta.getContadorBicicletas());
+        
+        Ciclista ciclista1 = new Ciclista("Pepe", 1);
+        System.out.println(ciclista1);
+        
+        Bicicleta bici4 = new Bicicleta("Canyon", "negro", 2000, 3, ciclista1);
+        System.out.println(bici4);
+        System.out.println();
+        Bicicleta bici5 = new Bicicleta("Canyon", "negro", 2000, 3, new Ciclista());
+        System.out.println(bici5);
+        
+        Bicicleta bici6 = new Bicicleta("Canyon", "negro", 2000, 3, new Ciclista("Ana", 5));
+        System.out.println(bici6);
     }
 }

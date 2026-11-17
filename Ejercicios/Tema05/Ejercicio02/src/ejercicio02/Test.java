@@ -1,4 +1,3 @@
-
 package ejercicio02;
 
 /**
@@ -16,7 +15,7 @@ public class Test {
     public static void main(String[] args) {
         
         // Creo el objeto curso1 de la clase Curso
-        Curso curso1 = new Curso ();
+        Curso curso1 = new Curso();
         
         // Establezco las características de curso1
         curso1.establecerNombreyHoras("Programación Java", 120);
@@ -25,7 +24,7 @@ public class Test {
         Curso.sumarCursos();
         
         // Creo el objeto curso2 de la clase Curso
-        Curso curso2 = new Curso ();
+        Curso curso2 = new Curso();
         
         // Establezco las características de curso2
         curso2.establecerNombreyHoras("Desarrollo Web", 80);
