@@ -49,5 +49,7 @@ public class Ejercicio09 {
         
         System.out.print("Introduzca el tercer número: ");
         Numero num3 = new Numero(pedirNumero());
+        
+        determinarMayor(num1, num2, num3);
     }
 }
