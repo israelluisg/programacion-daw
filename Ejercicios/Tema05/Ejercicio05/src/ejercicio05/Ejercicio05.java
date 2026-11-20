@@ -4,10 +4,17 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  *
+ * Programa que solicita las notas de seis asignaturas y calcula
+ * la nota media del curso.
+ *
  * @author israel
  */
 public class Ejercicio05 {
     
+    /**
+     * Método que solicita una nota y valida que sea numérica.
+     * @return nota introducida.
+     */
     public static double pedirNota () {
         Scanner entrada = new Scanner(System.in);
         
@@ -28,45 +35,53 @@ public class Ejercicio05 {
         return nota;
     }
     
-    public static double hacerNotaMedia (Asignaturas asignatura1, 
-            Asignaturas asignatura2, Asignaturas asignatura3, 
-            Asignaturas asignatura4, Asignaturas asignatura5, 
-            Asignaturas asignatura6) {
+    /**
+     * Método que muestra un mensaje y asigna una nota a una asignatura.
+     * @param asignatura asignatura a la que se asigna la nota.
+     * @param mensaje mensaje que se muestra por pantalla.
+     */
+    public static void asignarNota (Asignatura asignatura, String mensaje) {
+        System.out.print(mensaje);
+        asignatura.setNota(pedirNota());
+    }
+
+    /**
+     * Método que calcula la media de seis notas.
+     * @param nota1 primera nota.
+     * @param nota2 segunda nota.
+     * @param nota3 tercera nota.
+     * @param nota4 cuarta nota.
+     * @param nota5 quinta nota.
+     * @param nota6 sexta nota.
+     * @return media de las seis notas.
+     */
+    public static double hacerNotaMedia (double nota1, double nota2,
+            double nota3, double nota4, double nota5, double nota6) {
         
-        return ((asignatura1.getNota()) + asignatura2.getNota() 
-                + asignatura3.getNota() + asignatura4.getNota() 
-                + asignatura5.getNota() + asignatura6.getNota()) / 6;
+        return (nota1 + nota2 + nota3 + nota4 + nota5 + nota6) / 6;
     }
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Asignaturas prog = new Asignaturas("Programación");
-        Asignaturas lmsgi = new Asignaturas("Lenguajes de Marcas");
-        Asignaturas bd = new Asignaturas("Bases de Datos");
-        Asignaturas ed = new Asignaturas("Entornos de Desarrollo");
-        Asignaturas si = new Asignaturas("Sistemas Informáticos");
-        Asignaturas fold = new Asignaturas("Formación y Orientación Laboral");
+        Asignatura prog = new Asignatura("Programación");
+        Asignatura lmsgi = new Asignatura("Lenguajes de Marcas");
+        Asignatura bd = new Asignatura("Bases de Datos");
+        Asignatura ed = new Asignatura("Entornos de Desarrollo");
+        Asignatura si = new Asignatura("Sistemas Informáticos");
+        Asignatura fold = new Asignatura("Formación y Orientación Laboral");
         
-        System.out.print("Por favor, introduzca la nota de Programación: ");
-        prog.setNota(pedirNota());
+        asignarNota(prog, "Por favor, introduzca la nota de Programación: ");
+        asignarNota(lmsgi, "Introduzca la nota de Lenguajes de Marcas: ");
+        asignarNota(bd, "Introduzca la nota de Bases de Datos: ");
+        asignarNota(ed, "Introduzca la nota de Entornos de Desarrollo: ");
+        asignarNota(si, "Introduzca la nota de Sistemas Informáticos: ");
+        asignarNota(fold, "Por último, introduzca la nota de Formación y Orientación Laboral: ");
         
-        System.out.print("Introduzca la nota de Lenguajes de Marcas: ");
-        lmsgi.setNota(pedirNota());
-        
-        System.out.print("Introduzca la nota de Bases de Datos: ");
-        bd.setNota(pedirNota());
-        
-        System.out.print("Introduzca la nota de Entornos de Desarrollo: ");
-        ed.setNota(pedirNota());
-        
-        System.out.print("Introduzca la nota de Sistemas Informáticos: ");
-        si.setNota(pedirNota());
-        
-        System.out.print("Por último, introduzca la nota de Formación y Orientación Laboral: ");
-        fold.setNota(pedirNota());
-        
-        System.out.println(hacerNotaMedia(prog, lmsgi, bd, ed, si, fold));
+        System.out.println("Su nota media del curso es de: "
+                + hacerNotaMedia(prog.getNota(), lmsgi.getNota(), 
+                        bd.getNota(), ed.getNota(), si.getNota(),
+                        fold.getNota()));
     }
 }
