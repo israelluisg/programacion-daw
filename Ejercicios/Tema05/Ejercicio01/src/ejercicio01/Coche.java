@@ -43,6 +43,62 @@ public class Coche {
     }
     
     /**
+     * Método que establece la velocidad del coche.
+     * @param ve Nueva velocidad del coche.
+     */
+    public void establecerVelocidad (int ve) {
+        velocidad = ve;
+    }
+
+    /**
+     * Método que establece el estado del motor.
+     * @param me Nuevo estado del motor.
+     */
+    public void establecerMotorEncendido (boolean me) {
+        motorEncendido = me;
+    }
+
+    /**
+     * Método que obtiene la marca del coche.
+     * @return Marca del coche.
+     */
+    public String obtenerMarca () {
+        return marca;
+    }
+
+    /**
+     * Método que obtiene el modelo del coche.
+     * @return Modelo del coche.
+     */
+    public String obtenerModelo () {
+        return modelo;
+    }
+
+    /**
+     * Método que obtiene el color del coche.
+     * @return Color del coche.
+     */
+    public String obtenerColor () {
+        return color;
+    }
+
+    /**
+     * Método que obtiene la velocidad del coche.
+     * @return Velocidad del coche.
+     */
+    public int obtenerVelocidad () {
+        return velocidad;
+    }
+
+    /**
+     * Método que obtiene el estado del motor.
+     * @return Estado del motor.
+     */
+    public boolean obtenerMotorEncendido () {
+        return motorEncendido;
+    }
+
+    /**
      * Arranca el coche, establece motorEncendido en true y la velocidad en 10.
      */
     public void arrancarCoche () {

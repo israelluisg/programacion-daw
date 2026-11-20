@@ -29,6 +29,24 @@ public class Curso {
     }
     
     /**
+     * Método que establece el nombre del curso.
+     *
+     * @param nom Nuevo nombre del curso.
+     */
+    public void establecerNombre (String nom) {
+        nombre = nom;
+    }
+
+    /**
+     * Método que establece el número de horas del curso.
+     *
+     * @param num Nuevo número de horas del curso.
+     */
+    public void establecerHoras (int num) {
+        numeroHoras = num;
+    }
+
+    /**
      * Método que obtiene el nombre del curso.
      *
      * @return Nombre del curso.
@@ -60,5 +78,14 @@ public class Curso {
      */
     public static int verNumeroCursos () {
         return numeroDeCursos;
+    }
+
+    /**
+     * Método que establece el número total de cursos registrados.
+     *
+     * @param num Nuevo número de cursos registrados.
+     */
+    public static void establecerNumeroDeCursos (int num) {
+        numeroDeCursos = num;
     }
 }
