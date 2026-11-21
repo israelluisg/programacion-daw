@@ -40,11 +40,11 @@ public class Test {
      */
     public static void mostrarResultado(boolean comprobacion, Enunciado pregunta) {
         if (comprobacion) {
-            System.out.println("Enhorabuena! la respuesta era: " 
+            System.out.println("¡Enhorabuena! La respuesta era: "
                     + pregunta.getRespuesta());
             nota += 2.5;
         } else {
-            System.out.println("Fallaste! la respuesta correcta era: " 
+            System.out.println("¡Fallaste! La respuesta correcta era: "
                     + pregunta.getRespuesta());
         }
     }
@@ -69,13 +69,13 @@ public class Test {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Creo los 4 objeto Enunciado
+        // Creo los 4 objetos Enunciado
         Enunciado pregunta1 = new Enunciado("¿Cuál es la capital de España?", "Madrid");
         Enunciado pregunta2 = new Enunciado("¿Cuánto es 5 + 5?", "10");
         Enunciado pregunta3 = new Enunciado("¿Cuántos días tiene una semana?", "7");
         Enunciado pregunta4 = new Enunciado("¿Cuántos meses tiene un año?", "12");
         
-        // Realizo las pregunta al usuario
+        // Realizo las preguntas al usuario
         mostrarPregunta(pregunta1);
         mostrarPregunta(pregunta2);
         mostrarPregunta(pregunta3);

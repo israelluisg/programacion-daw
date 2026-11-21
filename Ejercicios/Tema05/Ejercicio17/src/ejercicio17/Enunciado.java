@@ -30,7 +30,7 @@ public class Enunciado {
         this.respuesta = respuesta;
     }
     
-    // Getters y Setteres
+    // Getters y Setters
     
     /**
      * Método que devuelve el valor de pregunta.
