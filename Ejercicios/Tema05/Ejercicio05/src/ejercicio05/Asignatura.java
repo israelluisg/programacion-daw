@@ -17,12 +17,22 @@ public class Asignatura {
      */
     public Asignatura () {
         nombre = "";
-        nota = 0;
+        nota = 0.0;
     }
     
     /**
-     * Constructor que recibe el nombre de la asignatura.
+     * Constructor con parámetros.
      * @param nombre nombre de la asignatura.
+     * @param nota nota de la asignatura.
+     */
+    public Asignatura (String nombre, double nota) {
+        this.nombre = nombre;
+        this.nota = nota;
+    }
+    
+    /**
+     * Constructor que recibe el nombre la asignatura.
+     * @param nombre 
      */
     public Asignatura (String nombre) {
         this.nombre = nombre;
