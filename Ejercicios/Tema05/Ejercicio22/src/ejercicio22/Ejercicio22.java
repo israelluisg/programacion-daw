@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 /**
  *
+ * Programa que simula una tienda de mascotas y gestiona las compras de sus
+ * productos, actualizando el stock y calculando el importe total.
+ *
  * @author israel
  */
 public class Ejercicio22 {
@@ -12,11 +15,16 @@ public class Ejercicio22 {
     // Variables globales
     static float precioCompra = 0.0f;
     static boolean compra = true;
-    
+
     // CONSTANTES
     final static String SI = "si";
     final static String NO = "no";
 
+    /**
+     * Método que solicita y valida un número entero mayor que 0.
+     *
+     * @return número entero introducido.
+     */
     public static int pedirEntero() {
         Scanner entrada = new Scanner(System.in);
 
@@ -26,11 +34,11 @@ public class Ejercicio22 {
         do {
             try {
                 numero = entrada.nextInt();
-                
+
                 if (numero > 0) {
                     validar = true;
                 } else {
-                    System.out.print("Error, introduzca un número mayor a 0: ");
+                    System.out.print("Error, introduzca un número mayor que 0: ");
                     validar = false;
                 }
             } catch (InputMismatchException e) {
@@ -42,75 +50,97 @@ public class Ejercicio22 {
 
         return numero;
     }
-    
+
+    /**
+     * Método que solicita y valida una respuesta afirmativa o negativa.
+     *
+     * @return respuesta introducida en minúsculas.
+     */
     public static String pedirRespuesta() {
         Scanner entrada = new Scanner(System.in);
         boolean validar;
         String respuesta;
-        
+
         do {
             respuesta = entrada.nextLine();
 
             if (respuesta.equalsIgnoreCase(SI) || respuesta.equalsIgnoreCase(NO)) {
                 validar = true;
             } else {
-                System.out.print("Error, introduzca si o no: ");
+                System.out.print("Error, introduzca sí o no (sin tilde): ");
                 validar = false;
             }
         } while (!validar);
-        
+
         return respuesta.toLowerCase();
     }
-    
-    public static boolean verificarStock(int unidadesCompra, Producto producto) {
-        return unidadesCompra <= producto.getStock();
-    }
 
+    /**
+     * Método que solicita las unidades, comprueba el stock y realiza la compra.
+     *
+     * @param producto producto elegido.
+     */
     public static void pedirUnidades(Producto producto) {
         int unidadesCompra;
         int stock = producto.getStock();
-        
+
         System.out.println("Ha elegido comprar " + producto.getNombre() + ".");
-        System.out.println("¿Cúantas unidades desea?");
+        System.out.println("¿Cuántas unidades desea?");
 
         unidadesCompra = pedirEntero();
 
-        if (verificarStock(unidadesCompra, producto)) {
-            producto.setStock(stock - unidadesCompra);
+        if (producto.verificarStock(unidadesCompra)) {
+            producto.reducirStock(unidadesCompra);
             precioCompra += producto.getPrecio() * unidadesCompra;
             System.out.println("Venta realizada con éxito.");
         } else {
-            System.out.println("Lo sentimos, solo tenemos disponibles " 
+            System.out.println("Lo sentimos, solo tenemos disponibles "
                     + stock + " unidades.");
         }
     }
 
+    /**
+     * Método que finaliza la compra y muestra el importe total si se ha
+     * comprado algún producto.
+     */
     public static void finalizarCompra() {
-        System.out.println("El total de su compra asciende a "
-                + precioCompra + " €");
-        System.out.println("Muchas gracias. Vuelva cuando quiera.");
+        if (precioCompra > 0) {
+            System.out.println("El total de su compra asciende a "
+                    + precioCompra + " €");
+            System.out.println("Muchas gracias. Vuelva cuando quiera.");
+        } else {
+            System.out.println("Cerrando programa...");
+        }
         compra = false;
     }
 
+    /**
+     * Método que muestra el menú de productos y gestiona las opciones hasta
+     * que finaliza la compra.
+     *
+     * @param producto1 primer producto.
+     * @param producto2 segundo producto.
+     * @param producto3 tercer producto.
+     */
     public static void mostrarMenuProductos(Producto producto1, Producto producto2, Producto producto3) {
         int numOpcion;
-        
-        System.out.println("-- Bienvenido a mi Tienda de Mascotas --");
-        
+
+        System.out.println("-- Bienvenido a mi tienda de mascotas --");
+
         do {
-            System.out.println("Pulse 1 para comprar " + producto1.getNombre() 
-                    + " cuyo precio es de " + producto1.getPrecio() 
+            System.out.println("Pulse 1 para comprar " + producto1.getNombre()
+                    + " cuyo precio es de " + producto1.getPrecio()
                     + " euros y el stock es de " + producto1.getStock() + " unidades.");
-            
-            System.out.println("Pulse 2 para comprar " + producto2.getNombre() 
-                    + " cuyo precio es de " + producto2.getPrecio() 
+
+            System.out.println("Pulse 2 para comprar " + producto2.getNombre()
+                    + " cuyo precio es de " + producto2.getPrecio()
                     + " euros y el stock es de " + producto2.getStock() + " unidades.");
-            
-            System.out.println("Pulse 3 para comprar " + producto3.getNombre() 
-                    + " cuyo precio es de " + producto3.getPrecio() 
+
+            System.out.println("Pulse 3 para comprar " + producto3.getNombre()
+                    + " cuyo precio es de " + producto3.getPrecio()
                     + " euros y el stock es de " + producto3.getStock() + " unidades.");
-            
-            System.out.println("Pules 4 para salir.");
+
+            System.out.println("Pulse 4 para salir.");
 
             numOpcion = pedirEntero();
 
@@ -118,17 +148,23 @@ public class Ejercicio22 {
                 case 1 -> mostrarMenuCompra(producto1);
                 case 2 -> mostrarMenuCompra(producto2);
                 case 3 -> mostrarMenuCompra(producto3);
-                case 4 -> System.out.println("Cerrando programa...");
+                case 4 -> finalizarCompra();
                 default -> System.out.print("Error, introduzca una opción válida.");
             }
-        } while (numOpcion != 4 && compra);
+        } while (compra);
     }
 
+    /**
+     * Método que realiza la compra de un producto y pregunta si se desea
+     * seguir comprando.
+     *
+     * @param producto producto elegido.
+     */
     public static void mostrarMenuCompra(Producto producto) {
         pedirUnidades(producto);
-        
-        System.out.println("¿Desea comprar otro producto?");
-        
+
+        System.out.println("¿Desea comprar otro producto? (si/no)");
+
         switch (pedirRespuesta()) {
             case SI -> {}
             case NO -> finalizarCompra();
