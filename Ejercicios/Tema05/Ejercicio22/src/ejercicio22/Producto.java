@@ -58,6 +58,30 @@ public class Producto {
     }
     
     /**
+     * Método que establece un valor a nombre.
+     * @param nombre valor que se asigna a nombre.
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    /**
+     * Método que establece un valor a precio.
+     * @param precio valor que se asigna a precio.
+     */
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+    
+    /**
+     * Método que establece un valor a stock.
+     * @param stock valor que se asigna a stock.
+     */
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+    
+    /**
      * Método que devuelve los datos del producto.
      * @return String del valor de todos los atributos.
      */
