@@ -2,83 +2,78 @@ package ejercicio21;
 
 /**
  *
+ * Clase que representa una cuenta bancaria con su saldo. Permite consultar el
+ * saldo, ingresar y extraer dinero.
+ *
  * @author israel
  */
 public class Cuenta {
+
     // Atributos
     private float saldo;
-    
+
+    /**
+     * Constructor sin parámetros.
+     */
     public Cuenta() {
         saldo = 0;
     }
-    
+
+    /**
+     * Constructor con parámetros.
+     *
+     * @param saldo saldo inicial de la cuenta.
+     */
     public Cuenta(float saldo) {
         this.saldo = saldo;
     }
-    
+
     // Getters y Setters
-    
+    /**
+     * Método que devuelve el saldo de la cuenta.
+     *
+     * @return saldo actual.
+     */
     public float getSaldo() {
         return saldo;
     }
-    
+
+    /**
+     * Método que establece el saldo de la cuenta.
+     *
+     * @param saldo nuevo saldo de la cuenta.
+     */
     public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
-    
+
     // Otros métodos
-    
+    /**
+     * Método que ingresa dinero en la cuenta.
+     *
+     * @param c cantidad que se ingresa.
+     */
     public void ingresar(float c) {
         saldo += c;
     }
-    
+
+    /**
+     * Método que extrae dinero de la cuenta. Permite que el saldo quede en
+     * negativo.
+     *
+     * @param c cantidad que se extrae.
+     */
     public void extraer(float c) {
         saldo -= c;
     }
-    
-    public void crearCuentaClave(String clave) {
-        CuentaClave cuentaClave = new CuentaClave(clave);
-    }
-    
+
+    /**
+     * Método que devuelve los datos de la cuenta.
+     *
+     * @return cadena con el saldo de la cuenta.
+     */
     @Override
     public String toString() {
         return "Saldo: " + saldo;
-    }
-    
-    public class CuentaClave {
-        // Atributos
-        private String clave;
-        
-        public CuentaClave() {
-            clave = "";
-        }
-        
-        public CuentaClave(String clave) {
-            this.clave = clave;
-        }
-        
-        // Getters y Setters
-        
-        public String getClave() {
-            return clave;
-        }
-        
-        public void setClave(String clave) {
-            this.clave = clave;
-        }
-        
-        public void extraer(float c) {
-            if (c < saldo) {
-                saldo -= c;
-            } else {
-                System.out.println("No se pudo completar la operación, ya que " 
-                        + " su saldo es inferior a la cantidad que desea retirar.");
-            }
-        }
-        
-        @Override
-        public String toString() {
-            return "Clave: " + clave;
-        }
     }
 }

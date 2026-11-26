@@ -5,10 +5,18 @@ import java.util.Scanner;
 
 /**
  *
+ * Programa que simula un cajero automático mediante un menú. Permite crear una
+ * cuenta con clave, ingresar, retirar y consultar el saldo.
+ *
  * @author israel
  */
 public class Ejercicio21 {
 
+    /**
+     * Método que solicita y valida una cantidad mayor a 0.
+     *
+     * @return cantidad introducida.
+     */
     public static float pedirFloat() {
         Scanner entrada = new Scanner(System.in);
 
@@ -26,7 +34,7 @@ public class Ejercicio21 {
                     validar = true;
                 }
             } catch (InputMismatchException e) {
-                System.out.print("Error, introduzca un número válida: ");
+                System.out.print("Error, introduzca un número válido: ");
                 validar = true;
                 entrada.nextLine();
             }
@@ -35,6 +43,23 @@ public class Ejercicio21 {
         return numero;
     }
 
+    /**
+     * Método que solicita la clave de la cuenta al usuario.
+     *
+     * @return clave introducida.
+     */
+    public static String pedirClave() {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Introduzca la clave de su cuenta: ");
+        return entrada.nextLine();
+    }
+
+    /**
+     * Método que solicita un número entero al usuario.
+     *
+     * @return número entero introducido.
+     */
     public static int pedirEntero() {
         Scanner entrada = new Scanner(System.in);
 
@@ -54,29 +79,46 @@ public class Ejercicio21 {
 
         return numero;
     }
-    
-    public static String pedirClave() {
-        Scanner entrada = new Scanner(System.in);
 
-        System.out.print("Introduzca la clave de su cuenta: ");
-        return entrada.nextLine();
+    /**
+     * Método que crea una cuenta con saldo 0 y clave.
+     *
+     * @return objeto CuentaClave creado.
+     */
+    public static CuentaClave crearCuentaVacia() {
+        String clave = pedirClave();
+
+        System.out.println("Se ha creado una cuenta correctamente.");
+        return new CuentaClave(0f, clave);
     }
 
-    public static Cuenta crearCuentaVacia() {
-        Cuenta cuenta = new Cuenta();
-        cuenta.crearCuentaClave(pedirClave());
-        
-        System.out.println("Se ha creado una cuenta vacía.");
-        
+    /**
+     * Método que crea una cuenta con el saldo inicial y la clave introducidos.
+     *
+     * @return objeto CuentaClave creado.
+     */
+    public static CuentaClave crearCuentaConSaldo() {
+        float saldoInicial;
+        String clave;
+
+        System.out.print("Introduzca el saldo inicial de su cuenta: ");
+        saldoInicial = pedirFloat();
+
+        clave = pedirClave();
+
+        CuentaClave cuenta = new CuentaClave(saldoInicial, clave);
+        System.out.println("Se ha creado una cuenta correctamente.");
+
         return cuenta;
     }
 
-    public static Cuenta crearCuentaConSaldo() {
-        System.out.print("Introduzca el saldo inicial de su cuenta: ");
-        return new Cuenta(pedirFloat());
-    }
-
-    public static void ingresarDinero(Cuenta cuenta, boolean validarCuenta) {
+    /**
+     * Método que solicita e ingresa dinero en la cuenta.
+     *
+     * @param cuenta objeto CuentaClave.
+     * @param validarCuenta indica si se ha creado una cuenta.
+     */
+    public static void ingresarDinero(CuentaClave cuenta, boolean validarCuenta) {
         float ingreso;
 
         if (validarCuenta) {
@@ -93,7 +135,13 @@ public class Ejercicio21 {
         }
     }
 
-    public static void sacarDinero(Cuenta cuenta, boolean validarCuenta) {
+    /**
+     * Método que solicita la cantidad a retirar de la cuenta.
+     *
+     * @param cuenta objeto CuentaClave.
+     * @param validarCuenta indica si se ha creado una cuenta.
+     */
+    public static void sacarDinero(CuentaClave cuenta, boolean validarCuenta) {
         float retiro;
 
         if (validarCuenta) {
@@ -101,16 +149,19 @@ public class Ejercicio21 {
 
             retiro = pedirFloat();
 
-            
-
-            System.out.println("Se han retirado correctamente "
-                    + retiro + " €.");
+            cuenta.extraer(retiro);
         } else {
             System.out.println("Error, tienes que crear una cuenta primero.");
         }
     }
 
-    public static void verSaldo(Cuenta cuenta, boolean validarCuenta) {
+    /**
+     * Método que muestra el saldo actual de la cuenta.
+     *
+     * @param cuenta objeto CuentaClave.
+     * @param validarCuenta indica si se ha creado una cuenta.
+     */
+    public static void verSaldo(CuentaClave cuenta, boolean validarCuenta) {
         if (validarCuenta) {
             System.out.println("Su saldo actual es de " + cuenta.getSaldo() + " €.");
         } else {
@@ -118,11 +169,15 @@ public class Ejercicio21 {
         }
     }
 
+    /**
+     * Método que muestra el menú y realiza la opción seleccionada. Se repite
+     * hasta que el usuario elige salir.
+     */
     public static void gestionarMenu() {
         int numOpcion;
         boolean validarCuenta = false;
 
-        Cuenta cuenta = new Cuenta();
+        CuentaClave cuenta = new CuentaClave();
 
         do {
             System.out.println("\n1.- Crear cuenta vacía.");
@@ -131,7 +186,7 @@ public class Ejercicio21 {
             System.out.println("4.- Sacar dinero.");
             System.out.println("5.- Ver saldo.");
             System.out.println("6.- Salir.");
-            System.out.print("Eliga una opción: ");
+            System.out.print("Elija una opción: ");
 
             numOpcion = pedirEntero();
 
@@ -152,6 +207,8 @@ public class Ejercicio21 {
                     verSaldo(cuenta, validarCuenta);
                 case 6 ->
                     System.out.println("Cerrando programa...");
+                default ->
+                    System.out.println("Error, introduzca una opción válida.");
             }
         } while (numOpcion != 6);
     }
